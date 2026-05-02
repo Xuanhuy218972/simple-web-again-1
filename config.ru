@@ -1,3 +1,3 @@
-run proc{
-    |env| [200, { "content-type"=> "text/plain" },
-    ["Hello"]] }
+require_relative "lib/frack/application"
+
+run Frack::Application.new
