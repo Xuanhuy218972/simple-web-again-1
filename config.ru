@@ -3,6 +3,7 @@ require "frack"
 require_relative "app/controllers/home_controller"
 require_relative "app/controllers/users_controller"
 
+use OTR::ActiveRecord::ConnectionManagement
 run Frack::Router.new(Frack::Application) {
     get "/"      => "home#show"
     get "/users" => "users#new"
