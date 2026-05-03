@@ -1,3 +1,4 @@
+require 'dotenv/load'
 require 'bundler/setup'
 load 'tasks/otr-activerecord.rake'
 

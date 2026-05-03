@@ -10,8 +10,8 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV.fetch("DB_NAME", "simpleweb_development") %>
+  database: <%= ENV.fetch("DB_NAME", "simpleweb") %>
 
 test:
   <<: *default
-  database: <%= ENV.fetch("DB_TEST_NAME", "simpleweb_test") %>
+  database: <%= ENV.fetch("DB_TEST_NAME", "simpleweb") %>
