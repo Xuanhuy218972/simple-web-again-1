@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopMax | Modern E-Commerce</title>
+  <!-- Bootstrap 5 CSS Only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100 bg-light">
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">
+          <span class="text-info">Shop</span>Max
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMain" aria-controls="navbarsMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsMain">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/categories">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/orders">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/order_items">Order Items</a>
+            </li>
+          </ul>
+          <!-- Synchronized Auth Buttons -->
+          <div class="d-flex align-items-center gap-2">
+            <a class="btn btn-outline-info btn-sm px-4" href="/signin">Sign in</a>
+            <a class="btn btn-info btn-sm px-4 text-dark fw-semibold" href="/signup">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-5 bg-white border-top">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 text-center text-sm-start">
+        <div class="col">
+          <h5 class="fw-bold mb-3">ShopMax</h5>
+          <p class="text-secondary small">The ultimate destination for premium quality and unparalleled service. Experience the future of shopping today.</p>
+        </div>
+        <div class="col">
+          <h5 class="fw-bold mb-3 small text-uppercase text-secondary">Catalog</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/products" class="nav-link p-0 text-secondary small">Products</a></li>
+            <li class="nav-item mb-2"><a href="/categories" class="nav-link p-0 text-secondary small">Categories</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h5 class="fw-bold mb-3 small text-uppercase text-secondary">Orders</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/orders" class="nav-link p-0 text-secondary small">My Orders</a></li>
+            <li class="nav-item mb-2"><a href="/order_items" class="nav-link p-0 text-secondary small">Order Items</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h5 class="fw-bold mb-3 small text-uppercase text-secondary">Account</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/signin" class="nav-link p-0 text-secondary small">Sign in</a></li>
+            <li class="nav-item mb-2"><a href="/signup" class="nav-link p-0 text-secondary small">Sign up</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top align-items-center">
+        <p class="text-secondary small mb-0">&copy; 2026 ShopMax, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex mb-0 mt-3 mt-sm-0">
+          <li class="ms-3"><a class="text-secondary small text-decoration-none" href="#">Privacy Policy</a></li>
+          <li class="ms-3"><a class="text-secondary small text-decoration-none" href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
