@@ -36,8 +36,13 @@
           </ul>
           <!-- Synchronized Auth Buttons -->
           <div class="d-flex align-items-center gap-2">
-            <a class="btn btn-outline-info btn-sm px-4" href="/signin">Sign in</a>
-            <a class="btn btn-info btn-sm px-4 text-dark fw-semibold" href="/signup">Sign up</a>
+            <% if current_user %>
+              <span class="text-light small me-2">Hello, <%= current_user.email %></span>
+              <a class="btn btn-outline-danger btn-sm px-4" href="/signout">Sign out</a>
+            <% else %>
+              <a class="btn btn-outline-info btn-sm px-4" href="/signin">Sign in</a>
+              <a class="btn btn-info btn-sm px-4 text-dark fw-semibold" href="/signup">Sign up</a>
+            <% end %>
           </div>
         </div>
       </div>
@@ -46,6 +51,12 @@
 
   <main class="flex-shrink-0">
     <div class="container py-5">
+      <% if session['flash'] %>
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+          <%= session.delete('flash') %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
       <div class="row">
         <div class="col-12">
           <%= yield %>
