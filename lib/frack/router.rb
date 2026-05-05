@@ -27,5 +27,10 @@ module Frack
             path, mapping = route.first
             routes[path + "GET"] = mapping
         end
+
+        def post(route)
+            path, mapping = route.first
+            routes[path + "POST"] = mapping
+        end
     end
 end

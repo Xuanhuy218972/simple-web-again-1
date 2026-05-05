@@ -4,9 +4,12 @@ module Frack
             attr_accessor :env
             def call(env)
                 self.env = env
-                body = dispatch
-                [200, { "content-type" => "text/html" }, [body]]
-            
+                response = dispatch
+                if response.is_a?(Array)
+                  response
+                else
+                  [200, { "content-type" => "text/html" }, [response]]
+                end
             end
             
             def dispatch
